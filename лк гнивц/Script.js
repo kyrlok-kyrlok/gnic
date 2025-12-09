@@ -1,66 +1,66 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Инициализация мобильного меню
+    // Г€Г­ГЁГ¶ГЁГ Г«ГЁГ§Г Г¶ГЁГї Г¬Г®ГЎГЁГ«ГјГ­Г®ГЈГ® Г¬ГҐГ­Гѕ
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
 
     mobileMenuBtn.addEventListener('click', function () {
-        alert('Информационная система "Карточка должника - Физическое лицо"');
+        alert('Г€Г­ГґГ®Г°Г¬Г Г¶ГЁГ®Г­Г­Г Гї Г±ГЁГ±ГІГҐГ¬Г  "ГЉГ Г°ГІГ®Г·ГЄГ  Г¤Г®Г«Г¦Г­ГЁГЄГ  - Г”ГЁГ§ГЁГ·ГҐГ±ГЄГ®ГҐ Г«ГЁГ¶Г®"');
     });
 
-    // Кнопки обновления данных
+    // ГЉГ­Г®ГЇГЄГЁ Г®ГЎГ­Г®ГўГ«ГҐГ­ГЁГї Г¤Г Г­Г­Г»Гµ
     const refreshButtons = document.querySelectorAll('#refreshProfile, #refreshDocuments, #refreshCase, #refreshAdditional, #refreshConvictions');
     refreshButtons.forEach(btn => {
         btn.addEventListener('click', function () {
             const icon = this.querySelector('i');
 
-            // Анимация вращения
+            // ГЂГ­ГЁГ¬Г Г¶ГЁГї ГўГ°Г Г№ГҐГ­ГЁГї
             icon.style.transition = 'transform 0.5s ease';
             icon.style.transform = 'rotate(360deg)';
 
-            // Через полсекунды возвращаем обратно
+            // Г—ГҐГ°ГҐГ§ ГЇГ®Г«Г±ГҐГЄГіГ­Г¤Г» ГўГ®Г§ГўГ°Г Г№Г ГҐГ¬ Г®ГЎГ°Г ГІГ­Г®
             setTimeout(() => {
                 icon.style.transform = 'rotate(0deg)';
 
-                // Показываем сообщение об обновлении
-                alert('Данные обновлены. Все поля остаются пустыми, так как информация будет загружаться из базы данных.');
+                // ГЏГ®ГЄГ Г§Г»ГўГ ГҐГ¬ Г±Г®Г®ГЎГ№ГҐГ­ГЁГҐ Г®ГЎ Г®ГЎГ­Г®ГўГ«ГҐГ­ГЁГЁ
+                alert('Г„Г Г­Г­Г»ГҐ Г®ГЎГ­Г®ГўГ«ГҐГ­Г». Г‚Г±ГҐ ГЇГ®Г«Гї Г®Г±ГІГ ГѕГІГ±Гї ГЇГіГ±ГІГ»Г¬ГЁ, ГІГ ГЄ ГЄГ ГЄ ГЁГ­ГґГ®Г°Г¬Г Г¶ГЁГї ГЎГіГ¤ГҐГІ Г§Г ГЈГ°ГіГ¦Г ГІГјГ±Гї ГЁГ§ ГЎГ Г§Г» Г¤Г Г­Г­Г»Гµ.');
             }, 500);
         });
     });
 
-    // Обработка нажатия на поля (только для чтения)
+    // ГЋГЎГ°Г ГЎГ®ГІГЄГ  Г­Г Г¦Г ГІГЁГї Г­Г  ГЇГ®Г«Гї (ГІГ®Г«ГјГЄГ® Г¤Г«Гї Г·ГІГҐГ­ГЁГї)
     const infoValues = document.querySelectorAll('.info-value');
     infoValues.forEach(value => {
         value.addEventListener('click', function () {
-            // Просто показываем, что поле пустое
-            console.log('Поле "' + this.previousElementSibling.textContent + '" пустое');
+            // ГЏГ°Г®Г±ГІГ® ГЇГ®ГЄГ Г§Г»ГўГ ГҐГ¬, Г·ГІГ® ГЇГ®Г«ГҐ ГЇГіГ±ГІГ®ГҐ
+            console.log('ГЏГ®Г«ГҐ "' + this.previousElementSibling.textContent + '" ГЇГіГ±ГІГ®ГҐ');
         });
     });
 
-    // Информация о системе при загрузке
-    console.log('Система "Карточка должника - Физическое лицо" загружена');
-    console.log('Все поля пустые, так как данные будут загружаться из базы данных');
+    // Г€Г­ГґГ®Г°Г¬Г Г¶ГЁГї Г® Г±ГЁГ±ГІГҐГ¬ГҐ ГЇГ°ГЁ Г§Г ГЈГ°ГіГ§ГЄГҐ
+    console.log('Г‘ГЁГ±ГІГҐГ¬Г  "ГЉГ Г°ГІГ®Г·ГЄГ  Г¤Г®Г«Г¦Г­ГЁГЄГ  - Г”ГЁГ§ГЁГ·ГҐГ±ГЄГ®ГҐ Г«ГЁГ¶Г®" Г§Г ГЈГ°ГіГ¦ГҐГ­Г ');
+    console.log('Г‚Г±ГҐ ГЇГ®Г«Гї ГЇГіГ±ГІГ»ГҐ, ГІГ ГЄ ГЄГ ГЄ Г¤Г Г­Г­Г»ГҐ ГЎГіГ¤ГіГІ Г§Г ГЈГ°ГіГ¦Г ГІГјГ±Гї ГЁГ§ ГЎГ Г§Г» Г¤Г Г­Г­Г»Гµ');
 
-    // Функция для загрузки судимостей из БД
+    // Г”ГіГ­ГЄГ¶ГЁГї Г¤Г«Гї Г§Г ГЈГ°ГіГ§ГЄГЁ Г±ГіГ¤ГЁГ¬Г®Г±ГІГҐГ© ГЁГ§ ГЃГ„
     function loadConvictionsFromDB() {
-        // В реальном приложении здесь будет AJAX-запрос к БД
-        // Пример данных:
+        // Г‚ Г°ГҐГ Г«ГјГ­Г®Г¬ ГЇГ°ГЁГ«Г®Г¦ГҐГ­ГЁГЁ Г§Г¤ГҐГ±Гј ГЎГіГ¤ГҐГІ AJAX-Г§Г ГЇГ°Г®Г± ГЄ ГЃГ„
+        // ГЏГ°ГЁГ¬ГҐГ° Г¤Г Г­Г­Г»Гµ:
         /*
         const convictionsData = [
             {
                 id: 1,
-                article: "Статья 159 УК РФ 'Мошенничество'",
+                article: "Г‘ГІГ ГІГјГї 159 Г“ГЉ ГђГ” 'ГЊГ®ГёГҐГ­Г­ГЁГ·ГҐГ±ГІГўГ®'",
                 date: "15.03.2018",
-                sentence: "3 года лишения свободы условно",
-                court: "Ленинский районный суд г. Москвы",
-                status: "Погашена",
+                sentence: "3 ГЈГ®Г¤Г  Г«ГЁГёГҐГ­ГЁГї Г±ГўГ®ГЎГ®Г¤Г» ГіГ±Г«Г®ГўГ­Г®",
+                court: "Г‹ГҐГ­ГЁГ­Г±ГЄГЁГ© Г°Г Г©Г®Г­Г­Г»Г© Г±ГіГ¤ ГЈ. ГЊГ®Г±ГЄГўГ»",
+                status: "ГЏГ®ГЈГ ГёГҐГ­Г ",
                 expirationDate: "15.03.2021"
             },
             {
                 id: 2,
-                article: "Статья 158 УК РФ 'Кража'",
+                article: "Г‘ГІГ ГІГјГї 158 Г“ГЉ ГђГ” 'ГЉГ°Г Г¦Г '",
                 date: "10.07.2015",
-                sentence: "1 год 6 месяцев лишения свободы",
-                court: "Центральный районный суд г. Санкт-Петербурга",
-                status: "Погашена",
+                sentence: "1 ГЈГ®Г¤ 6 Г¬ГҐГ±ГїГ¶ГҐГў Г«ГЁГёГҐГ­ГЁГї Г±ГўГ®ГЎГ®Г¤Г»",
+                court: "Г–ГҐГ­ГІГ°Г Г«ГјГ­Г»Г© Г°Г Г©Г®Г­Г­Г»Г© Г±ГіГ¤ ГЈ. Г‘Г Г­ГЄГІ-ГЏГҐГІГҐГ°ГЎГіГ°ГЈГ ",
+                status: "ГЏГ®ГЈГ ГёГҐГ­Г ",
                 expirationDate: "10.07.2018"
             }
         ];
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
         */
     }
 
-    // Функция для отображения судимостей
+    // Г”ГіГ­ГЄГ¶ГЁГї Г¤Г«Гї Г®ГІГ®ГЎГ°Г Г¦ГҐГ­ГЁГї Г±ГіГ¤ГЁГ¬Г®Г±ГІГҐГ©
     function renderConvictions(convictions) {
         const convictionsList = document.getElementById('convictionsList');
 
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
             convictionsList.innerHTML = `
                 <div class="empty-convictions">
                     <i class="fas fa-clipboard-list"></i>
-                    <p>Список судимостей пуст</p>
+                    <p>Г‘ГЇГЁГ±Г®ГЄ Г±ГіГ¤ГЁГ¬Г®Г±ГІГҐГ© ГЇГіГ±ГІ</p>
                 </div>
             `;
             return;
@@ -94,19 +94,19 @@ document.addEventListener('DOMContentLoaded', function () {
                     </div>
                     <div class="conviction-details">
                         <div class="conviction-detail">
-                            <div class="conviction-label">Приговор</div>
+                            <div class="conviction-label">ГЏГ°ГЁГЈГ®ГўГ®Г°</div>
                             <div class="conviction-value">${conviction.sentence}</div>
                         </div>
                         <div class="conviction-detail">
-                            <div class="conviction-label">Суд</div>
+                            <div class="conviction-label">Г‘ГіГ¤</div>
                             <div class="conviction-value">${conviction.court}</div>
                         </div>
                         <div class="conviction-detail">
-                            <div class="conviction-label">Статус</div>
+                            <div class="conviction-label">Г‘ГІГ ГІГіГ±</div>
                             <div class="conviction-value">${conviction.status}</div>
                         </div>
                         <div class="conviction-detail">
-                            <div class="conviction-label">Дата погашения</div>
+                            <div class="conviction-label">Г„Г ГІГ  ГЇГ®ГЈГ ГёГҐГ­ГЁГї</div>
                             <div class="conviction-value">${conviction.expirationDate}</div>
                         </div>
                     </div>
@@ -117,6 +117,6 @@ document.addEventListener('DOMContentLoaded', function () {
         convictionsList.innerHTML = html;
     }
 
-    // Загрузка судимостей при старте (в реальном приложении будет вызываться после авторизации)
+    // Г‡Г ГЈГ°ГіГ§ГЄГ  Г±ГіГ¤ГЁГ¬Г®Г±ГІГҐГ© ГЇГ°ГЁ Г±ГІГ Г°ГІГҐ (Гў Г°ГҐГ Г«ГјГ­Г®Г¬ ГЇГ°ГЁГ«Г®Г¦ГҐГ­ГЁГЁ ГЎГіГ¤ГҐГІ ГўГ»Г§Г»ГўГ ГІГјГ±Гї ГЇГ®Г±Г«ГҐ Г ГўГІГ®Г°ГЁГ§Г Г¶ГЁГЁ)
     // loadConvictionsFromDB();
 });
