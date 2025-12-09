@@ -1,0 +1,226 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Карточка должника - Физическое лицо</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="mobile-header">
+        <div class="mobile-logo">
+            <i class="fas fa-file-invoice-dollar"></i>
+            <span>Карточка должника</span>
+        </div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+
+    <div class="container">
+        <!-- Заголовок системы -->
+        <div class="system-header">
+            <h1 class="system-title">КАРТОЧКА ДОЛЖНИКА - ФИЗИЧЕСКОЕ ЛИЦО</h1>
+            <p class="system-subtitle">Информационная система для просмотра данных должника</p>
+        </div>
+
+        <!-- Основной контент -->
+        <div class="dashboard-content">
+            <div class="dashboard-grid">
+                <!-- Общая информация о должнике -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3 class="card-title"><i class="fas fa-id-card"></i> Общая информация</h3>
+                        <div class="card-actions">
+                            <button class="card-btn" id="refreshProfile"><i class="fas fa-redo"></i> Обновить</button>
+                        </div>
+                    </div>
+
+                    <div class="info-section">
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <div class="info-label">Фамилия</div>
+                                <div class="info-value" id="lastName">пусто</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">Имя</div>
+                                <div class="info-value" id="firstName">пусто</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">Отчество</div>
+                                <div class="info-value" id="middleName">пусто</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">Дата рождения</div>
+                                <div class="info-value" id="birthDate">пусто</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">Место рождения</div>
+                                <div class="info-value" id="birthPlace">пусто</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">Пол</div>
+                                <div class="info-value" id="gender">пусто</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-section">
+                        <h4 class="section-title">Контакты и место жительства</h4>
+                        <div class="info-grid">
+                            <div class="info-item full-width">
+                                <div class="info-label">Адрес места жительства</div>
+                                <div class="info-value" id="residenceAddress">пусто</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">Адрес регистрации</div>
+                                <div class="info-value" id="registrationAddress">пусто</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">Контактный телефон</div>
+                                <div class="info-value" id="phone">пусто</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">Электронная почта</div>
+                                <div class="info-value" id="email">пусто</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Идентификационные данные -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3 class="card-title"><i class="fas fa-passport"></i> Идентификационные данные</h3>
+                        <div class="card-actions">
+                            <button class="card-btn" id="refreshDocuments"><i class="fas fa-redo"></i> Обновить</button>
+                        </div>
+                    </div>
+
+                    <div class="info-section">
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <div class="info-label">СНИЛС</div>
+                                <div class="info-value" id="snils">пусто</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">ИНН</div>
+                                <div class="info-value" id="inn">пусто</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">ОГРНИП</div>
+                                <div class="info-value" id="ogrnip">пусто</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">Серия и номер паспорта</div>
+                                <div class="info-value" id="passport">пусто</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">Дата выдачи паспорта</div>
+                                <div class="info-value" id="passportIssueDate">пусто</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">Кем выдан паспорт</div>
+                                <div class="info-value" id="passportIssuedBy">пусто</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Информация о деле о банкротстве -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3 class="card-title"><i class="fas fa-gavel"></i> Информация о деле о банкротстве</h3>
+                        <div class="card-actions">
+                            <button class="card-btn" id="refreshCase"><i class="fas fa-redo"></i> Обновить</button>
+                        </div>
+                    </div>
+
+                    <div class="info-section">
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <div class="info-label">Номер дела</div>
+                                <div class="info-value" id="caseNumber">пусто</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">Дата возбуждения дела</div>
+                                <div class="info-value" id="caseStartDate">пусто</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">Регион ведения дело</div>
+                                <div class="info-value" id="caseRegion">пусто</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">Арбитражный суд</div>
+                                <div class="info-value" id="courtName">пусто</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">Статус дела</div>
+                                <div class="info-value" id="caseStatus">пусто</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">Категория должника</div>
+                                <div class="info-value" id="debtorCategory">пусто</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Дополнительная информация -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3 class="card-title"><i class="fas fa-info-circle"></i> Дополнительная информация</h3>
+                        <div class="card-actions">
+                            <button class="card-btn" id="refreshAdditional"><i class="fas fa-redo"></i> Обновить</button>
+                        </div>
+                    </div>
+
+                    <div class="info-section">
+                        <div class="info-grid">
+                            <div class="info-item full-width">
+                                <div class="info-label">Примечания</div>
+                                <div class="info-value" id="notes">пусто</div>
+                            </div>
+                            <div class="info-item full-width">
+                                <div class="info-label">История изменения статуса</div>
+                                <div class="info-value" id="statusHistory">пусто</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">Дата последнего обновления</div>
+                                <div class="info-value" id="lastUpdate">пусто</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">Ответственный специалист</div>
+                                <div class="info-value" id="responsiblePerson">пусто</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Список судимостей -->
+                <div class="dashboard-card convictions-section">
+                    <div class="card-header">
+                        <h3 class="card-title"><i class="fas fa-balance-scale"></i> Судимости</h3>
+                        <div class="card-actions">
+                            <button class="card-btn" id="refreshConvictions"><i class="fas fa-redo"></i> Обновить</button>
+                        </div>
+                    </div>
+
+                    <div class="convictions-list" id="convictionsList">
+                        <div class="empty-convictions">
+                            <i class="fas fa-clipboard-list"></i>
+                            <p>Список судимостей пуст</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
